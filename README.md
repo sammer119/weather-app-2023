@@ -2,7 +2,7 @@
 
 To download and run code, download as zip from github.
 Extract to your PC.
-Open up extracted directory on your PC with Visual Studio Code, in terminal run 'npm i' to install all necessary packages/dependancies. Make sure terminal is runing in root of directory.
+Open up extracted directory on your PC with Visual Studio Code, in terminal run 'npm i' to install all necessary packages/dependancies. Make sure terminal is running in root of directory.
 To run development 'npm run start'
 
 Geolocation and Preferences API were used from Capacitor.
@@ -10,7 +10,7 @@ Geolocation for finding location of user and Preferences API for storing local s
 
 OpenWeatherMap API was used to fetch all the relevant weather data based on users location or search.
 
-Requirement 5 was not implemented but all other requirements were. SQLite would have been the way to go for that, didn't have time to fully implement.
+Requirement 5 was not implemented but all other requirements were. SQLite would have been the way to go for that, storing all previous searches of the user in the db and then getting them when the app loads.
 
 ## Framework7 CLI Options
 
