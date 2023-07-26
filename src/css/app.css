@@ -1,0 +1,80 @@
+/* Your app custom styles here */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.currentWeather__Section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.currentWeather_Text {
+  margin: 0px;
+  padding: 0px;
+}
+
+.currentWeather__Card {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+.currentWeather__SectionSeperated {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.currentWeather__Items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.currentWeather__SubItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.forecastWeather__Section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.forecastWeather__Element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  min-width: 55px;
+}
+
+.forecastWeather__Card {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+@media screen and (max-width: 500px) {
+  .forecastWeather__Section {
+    flex-direction: column;
+  }
+}

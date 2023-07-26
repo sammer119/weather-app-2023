@@ -1,0 +1,25 @@
+{
+  "cwd": "/Users/samatkins/Software Dev/weather-app",
+  "type": [
+    "capacitor"
+  ],
+  "name": "Weather App",
+  "framework": "react",
+  "template": "single-view",
+  "bundler": "vite",
+  "cssPreProcessor": false,
+  "theming": {
+    "customColor": false,
+    "color": "#007aff",
+    "darkMode": false,
+    "iconFonts": true
+  },
+  "customBuild": false,
+  "pkg": "io.framework7.myapp",
+  "capacitor": {
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  }
+}
