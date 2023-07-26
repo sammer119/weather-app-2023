@@ -47,12 +47,13 @@ const HomePage = () => {
     "Saturday",
   ];
 
-  // on load, getLocation of user
+  // on load, getLocalStorage if any and confirm it's ok to use location
   useEffect(() => {
     getLocalStorage();
     openConfirm();
   }, []);
 
+  // if currentWeather or forecastWeather changes then set to local storage
   useEffect(() => {
     if (currentWeather !== undefined && forecastWeather !== undefined) {
       setLocalStorage();
@@ -107,6 +108,7 @@ const HomePage = () => {
     }
   };
 
+  // searching weather for geolocation
   const searchWeatherGeoLocation = async () => {
     try {
       if (geoLocation !== undefined) {
@@ -140,6 +142,7 @@ const HomePage = () => {
     }
   };
 
+  // confirm it's ok to use location
   const openConfirm = () => {
     f7.dialog.confirm(
       "Use current location to get weather where you are?",
@@ -149,6 +152,7 @@ const HomePage = () => {
     );
   };
 
+  // setting state to local storage
   const setLocalStorage = async () => {
     await Preferences.set({
       key: "currentWeatherMain",
@@ -168,6 +172,7 @@ const HomePage = () => {
     });
   };
 
+  // getting the localstorage on load
   const getLocalStorage = async () => {
     const { value: currentWeatherMain } = await Preferences.get({
       key: "currentWeatherMain",
@@ -182,6 +187,7 @@ const HomePage = () => {
       key: "currentWeatherName",
     });
 
+    // setting the currentWeather from local storage
     setCurrentWeather({
       weather: [{ main: currentWeatherMain }],
       name: currentWeatherName,
@@ -189,6 +195,7 @@ const HomePage = () => {
     });
   };
 
+  // forecast elements
   const forecastElements = forecastWeather.map((x) => (
     <div key={x.dt} className="forecastWeather__Element">
       <p className="currentWeather_Text semibold">
@@ -214,8 +221,6 @@ const HomePage = () => {
     </div>
   ));
 
-  console.log(forecastWeather);
-
   return (
     <Page name="home">
       {/* Top Navbar */}
@@ -237,11 +242,13 @@ const HomePage = () => {
           <Icon icon="demo-list-icon" slot="media" />
         </ListInput>
       </List>
+      {/* Search input */}
       <Block>
         <Button fill onClick={searchWeather}>
           Search
         </Button>
       </Block>
+      {/* Current Weather Card */}
       <Card className="currentWeather__Card">
         {currentWeather !== undefined && (
           <div className="currentWeather__SectionSeperated">
@@ -261,6 +268,7 @@ const HomePage = () => {
                 </p>
               </div>
             </div>
+            {/* Weather icons - react-icons */}
             <div>
               {currentWeather.weather[0].main === "Clouds" && (
                 <BsFillCloudFill size={"110px"} color="lightgray" />
